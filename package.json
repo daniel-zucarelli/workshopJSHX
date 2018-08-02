@@ -1,0 +1,35 @@
+{
+  "name": "nearpodnator",
+  "version": "1.0.0",
+  "description": "Nearpod's Automated Testing Framework (a.k.a. \"Nearpodnator\")",
+  "main": "conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.nearpod.com:qa/automated-tests.git"
+  },
+  "author": "Nearpod's Test Engineering Pod",
+  "license": "Internal",
+  "dependencies": {
+    "await-to-js": "^2.0.1",
+    "jasmine-reporters": "^2.3.1",
+    "jimp": "^0.2.28",
+    "protractor": "^5.3.2",
+    "protractor-html-reporter-2": "^1.0.4",
+    "selenium-webdriver": "^2.48.2",
+    "simple-text-parser": "^1.0.0"
+  },
+  "devDependencies": {
+    "codeceptjs": "^1.1.2",
+    "codeceptjs-webdriverio": "^1.1.0",
+    "mocha-junit-reporter": "^1.17.0",
+    "window": "^4.2.5"
+  },
+  "engines": {
+    "node": ">=4.2",
+    "codeceptjs": "^1.1.5",
+    "codeceptjs-webdriverio": "^1.1.0"
+  }
+}

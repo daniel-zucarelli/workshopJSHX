@@ -1,0 +1,9 @@
+bin/
+node_modules/
+.DS_Store
+output/*
+/ProtractorTestReport.html
+nfl/
+/debug.log
+screenshots/*
+test_results/
