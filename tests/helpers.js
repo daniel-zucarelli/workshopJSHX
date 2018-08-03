@@ -32,31 +32,9 @@ Helpers.prototype.WaitForElementNotPresent = async function(locator, waitLimit =
   return await searchElement;
 }
 
-Helpers.prototype.isElementPresent = async function(locator){
-  var foundElement = await element(await this.WaitForElementPresent(locator));
-  if (await foundElement.isPresent() ){
-    return true;
-  }
-  else{
-    return false;
-  }
-}
-
 Helpers.prototype.hoverOver = async function(locator){
   var element = await this.getElement(locator);
   browser.actions().mouseMove(element).perform();
-}
-
-Helpers.prototype.clickAndRetry = async function(locator, times = 4){
-  let _element = await this.getElement(locator);
-  await browser.wait(ExpectedConditions.not(ExpectedConditions.visibilityOf(browser.element(by.css("div[class='loadingView messageDialog']"))), 10)).catch(e => console.log("no loading"));
-  await browser.wait(ExpectedConditions.not(ExpectedConditions.visibilityOf(browser.element(by.css("div[class='popup-body ']"))), 10)).catch(e => console.log("no pop-budy"));
-  await browser.wait(ExpectedConditions.not(ExpectedConditions.visibilityOf(browser.element(by.id("fancybox-overlay"))), 10)).catch(e => console.log("no fancybox-overlay"));
-  return await _element.click();
-}
-
-Helpers.prototype.wait = function wait(seconds) {
-  return new Promise(resolve => setTimeout(() => resolve(), seconds * 1000 ));
 }
 
 Helpers.prototype.isId = function(locator){

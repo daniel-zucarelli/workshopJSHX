@@ -1,22 +1,14 @@
 let assert = require("assert");
 
-describe('Protractor proof of concepts', () => {
+describe('Protractor in Javascript Workshop Hx QC', () => {
 
-  it('Can perform a single login and logout 02', async() => {
-    let searchCriteria = "wikipedia";
-    let expectedItemFound = "";
-
+  it(' ####### Test de ejemplo ;) ####### ', async() => {
     console.log( ":::: Test Start!! ::::" );
-    let searchBar = Helpers.getElement("");
-    searchBar.sendKeys(searchCriteria);
+    let searchBar = await helper.getElement("#top-menu-nav #top-menu a[href='https://www.ultimateqa.com/work-with-us/']");
+    let actualLinkText = await searchBar.getText();
+    let expectedLinkText = "Work with us";
 
-
-
-
-    // assert.equal( actualUserName, expectedUserName, "WRONG USERNAME OR PASSWORD: Actual= " + actualUserName + " :::");
-    // await userSettingsPage.logout();
-    // actualSignInbuttonText = await websitePage.getSignInbuttonText();
-    // assert.equal( actualSignInbuttonText, expectedSignInbuttonText, "WRONG BUTTON NAME!!!: Actual= " + actualUserName + " :::");
+    assert.equal(expectedLinkText, actualLinkText, "HAY UN BUG!!!!\nExpected link text :: " + expectedLinkText + "\nActual link text :: " + actualLinkText);
     console.log( ":::: Test Finished!! ::::" );
   });
 

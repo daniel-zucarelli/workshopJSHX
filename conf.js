@@ -9,7 +9,7 @@ function getWindowDOM(){
 
 async function startBrowser(){
   browser.ignoreSynchronization = true;
-  await browser.get('https://google.com');
+  await browser.get('https://www.ultimateqa.com/');
   var screenTitle = await browser.getTitle();
   console.log( screenTitle );
 }
@@ -18,8 +18,6 @@ exports.config = {
 
   //Protractor config properties
   beforeLaunch:async () => {
-      const nfl = require('.//dsl//nfl');
-      await nfl.createDSLScripts();
       console.log('beforeLaunch');
 
   },
@@ -30,6 +28,7 @@ exports.config = {
     let currentWindowAndDocument = getWindowDOM();
     global.window = currentWindowAndDocument[0];
     global.document = currentWindowAndDocument[1];
+    global.helper = require(".//tests//helpers");
 
       console.log('onPrepare');
       beforeAll(async function(){
