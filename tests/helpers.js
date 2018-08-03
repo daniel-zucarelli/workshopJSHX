@@ -51,7 +51,7 @@ Helpers.prototype.isCSS = function(locator){
         return [null, true, " >>> IS CSS LOCATOR", locator];
     }
     catch( err ) {
-      console.log(err.name + " :: " + err.message);
+      console.log(" C S S " + err.name + " :: " + err.message);
       return [err, false, "Error in parsing CSS: " + err, locator];
     }
   }
@@ -67,7 +67,9 @@ Helpers.prototype.isXPath = function(locator){
         return [null, is_xpath, " >>> IS XPATH LOCATOR", locator ];
     }
     catch( err ) {
-      console.log(err.name + " :: " + err.message);
+      if(err.name && err.message){
+        console.log("X PATH " + err.name + " :: " + err.message);
+      }
       return [err, false, "Error in parsing XPath: " + err, locator];
     }
   }
